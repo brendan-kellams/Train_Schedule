@@ -1,0 +1,13 @@
+.jumbotron {
+    background: url(../images/hogwarts-express.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1140px 340px;
+    height: 340px;
+}
+body {
+    background: url(../images/HPbackground.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
