@@ -57,12 +57,12 @@ database.ref('/schedule').on("child_added", function(childSnapshot, prevChild){
 
 
     //Time using moment.js converted
-    var trainTimeConverted = moment(trainTime, "hh:mm").subtract(1, "years")
+    var trainTimeConverted = moment(trainTime, "hh:mm A").subtract(1, "years")
     console.log(trainTimeConverted); 
 
     // Current Time
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm A"));
 
     // Difference between the times
     var diffTime = moment().diff(moment(trainTimeConverted), "minutes");
@@ -77,8 +77,8 @@ database.ref('/schedule').on("child_added", function(childSnapshot, prevChild){
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
     
     // Next Train(
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm A");
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm A"));
 
     $("#train-table").append('<tr><td>' + name + '</td><td>' + dest + '</td><td>' + 
     freq + '</td><td>' + nextTrain + '</td><td>' + tMinutesTillTrain + '</td></tr>')
